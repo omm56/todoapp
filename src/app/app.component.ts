@@ -1,5 +1,4 @@
 import { Component, getNgModuleById, OnInit, ɵisListLikeIterable } from '@angular/core';
-import { fireBaseConfig } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
