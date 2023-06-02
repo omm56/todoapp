@@ -1,0 +1,9 @@
+<div class="start-ratig">
+    <button class="star" *ngFor="let button of buttonList" [ngClass]="{'selected_color': button.selected == true}"
+        (click)="ratingReview(button)">{{button.label}}</button>
+</div>
+<br>
+<div class="start-ratig">
+    <button class="star" *ngFor="let button of buttonList2" [ngClass]="{'selected_color': button.selected == true}"
+        (click)="ratingReview1(button)">{{button.label}}</button>
+</div>

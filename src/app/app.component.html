@@ -1,0 +1,58 @@
+<h1> Todo App  </h1>
+
+<div class="containder">
+  <input type="text" [(ngModel)]="Tasktodo" placeholder="Enter the task (Only alphabets)" id="textbox1" size="50">&nbsp;
+  <!-- <input type="number" [(ngModel)]="contactNo" placeholder="Contact No" id="textbox2" onKeyPress="if(this.value.length>=10) return false;"> -->
+  <input type="date" [(ngModel)]="taskdate" placeholder="Date" id="textbox2">
+  &nbsp;&nbsp;&nbsp;
+  <button (click)="addToList()" id="add"> Add</button>
+  
+  <br>
+  <br>
+  <label class="label1"> SortBy : </label>
+  <select (change)="Changeby($event)" class="sort" >
+    <option></option>
+    <option value="name"> Task Name </option>
+    <option value="date"> Task Date</option>
+  </select>
+</div>
+
+<h2>Schedules</h2>
+<div class="list-container">
+  
+  <ol>
+    <li *ngFor="let list of complteList; let index = index">
+      <p> Tasks to be done: {{list.name}}</p>
+      <br>
+      <p> Date: {{list.date}}</p>
+      <br>
+      <button (click)=Edit(index) class="Edit"> Edit </button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button (click)=DeletefromList(index) class="Delete"> Delete </button>
+    </li>
+  </ol>
+
+  <!-- <table style="width:100">
+  <tr>
+
+  <th> Serial No</th>
+    <th> Employee Name</th>
+  <th> Contact No </th>
+  <th> Clear from list </th>
+  </tr>
+
+ <tr *ngFor = "let list of complteList; let index = index">
+  <td>  {{index+1}} </td>
+  <td> {{list.name}}</td>
+  <td> {{list.number}} </td>
+  <button (click)=DeletefromList(list.id) class="Delete"> Delete </button>
+    </tr>
+ </table> -->
+</div>
+
+<nav>
+<p>
+
+  <a href = "#" routerLink="/rating" > RateUs  </a>  </p>
+</nav>
+<router-outlet></router-outlet>
